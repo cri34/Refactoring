@@ -14,7 +14,10 @@ class Customer {
 
 
 	public float applyDiscount (float totalAmount) {
-		 if ((age > 17 && age < 66) && (salary - (salary * 0.2f)) < 1000f && totalAmount * 0.5 < 100) {
+		boolean ageValid=age > 17 && age < 66;
+		boolean salaryValid=(salary - (salary * 0.2f)) < 1000f;
+		boolean discountValid=totalAmount * 0.5 < 100;
+		 if ( ageValid && salaryValid && discountValid ) {
 			return totalAmount * 0.9f;
 		 } else {
 			return totalAmount;
