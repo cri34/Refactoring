@@ -14,9 +14,13 @@ public class Student {
 		float mark = (homework + exam) / 2;
 
 		if (hasGoodAttitude) {
-			return mark + 1;
+			return getMark(homework,exam)+ 1;
 		} else {
-			return mark;
+			return getMark(homework,exam);
 		}
+	}
+	private getMark(float homework, float exam){
+		return (homework + exam) / 2;
+
 	}
 }
