@@ -9,8 +9,8 @@ import java.util.Set;
 public class Order {
 	private Hashtable<String, Float> items = new Hashtable<String, Float>();
 
-	public void addItem(Integer productID, String description, Integer quantity, Float price, Float discount) {
-		items.put(productID + ": " + description, (quantity * price) - (quantity * price * discount));
+	public void addItem(OrderItem oi) {
+		items.put(oi.getProductID() + ": " + oi.getDescription(), (oi.getQuantity() * oi.getPrice()) - (oi.getQuantity() * oi.getPrice() * oi.getDiscount()));
 	}
 
 	public float calculateTotal() {
