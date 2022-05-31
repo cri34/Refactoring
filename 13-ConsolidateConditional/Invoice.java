@@ -16,13 +16,17 @@ public class Invoice {
 	}
 
 	public float calculateTotal(float subtotal, float vat) {
-		if (customer.getAge() < 18)
+		if(invalid(subtotal)){
 			return 0;
-		if (new GregorianCalendar().get(Calendar.YEAR) > year)
-			return 0;
-		if (subtotal < 0.5f)
-			return 0;
+		}
 
 		return subtotal * vat;
+	}
+	private boolean invalid(float subtotal){
+
+			return (customer.getAge() < 18||
+				new GregorianCalendar().get(Calendar.YEAR) > year||
+				subtotal < 0.5f);
+		}
 	}
 }
