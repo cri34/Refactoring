@@ -10,6 +10,6 @@ public class Weapon {
 	}
 
 	public int getDamage() {
-		return damage + new Random().nextInt(3);
+		return (damage + new Random().nextInt(3))+2;
 	}
 }
