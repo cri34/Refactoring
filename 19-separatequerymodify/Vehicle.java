@@ -6,23 +6,22 @@ public class Vehicle {
 	private String type;
 
 	public Vehicle(int power) {
-		initVehicleAndGetType(power);
+		setHorsePower(power);
+		setType();
 	}
 
-	private String initVehicleAndGetType(int power) {
-		horsePower = power;
-
-		if (power >= 10) {
+	private void setType() {
+		if (horsePower >= 10) {
 			type = "Truck";
-		} else if (power > 5 && power < 10) {
+		} else if (horsePower > 5 && horsePower < 10) {
 			type = "Car";
 		} else {
 			type = "Bike";
 		}
-		
-		return type;
 	}
-
+	public int setHorsePower(int power){
+		this.horsePower=horsePower;
+		}
 	public int getHorsePower() {
 		return horsePower;
 	}
