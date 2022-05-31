@@ -21,19 +21,15 @@ public class Flight {
 	public float priceForPassenger (Passenger passenger) {
 		float price = 0;
 		if (passenger.isAChild()) {
-			  price = childDiscount();
-			} else {
-			  if (passenger.isUnemployed()) {
-			  price = unemployedDiscount();
-			  } else {
-			    if (isChristmas()) {
-			    price = 0;
-			    } else {
-			    price = normalPrice();
-			    }
-			  }
+			return childDiscount();
 			}
-		return price;
+		if (passenger.isUnemployed()) {
+			return unemployedDiscount();
+			}
+		if (isChristmas()) {
+			return 0;
+			}
+		return normalPrice();
 	}
 
 	private float unemployedDiscount() {
