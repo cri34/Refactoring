@@ -9,19 +9,14 @@ public class Friends {
 	}
 	
 	public int indexOf (String friend) {
-		boolean found = false;
 		int i = 0;
 		
-		while (i < friends.length && !found ) { 
+		while (i < friends.length) {
 			  if (friends[i].equals(friend)) {
-			    found = true;
+			    return (i-1);
 			  }
 			  i++;
 			}
-		
-		if (found) {
-			return (i-1);
-		} else {
 			return -1;
 		}
 	}
