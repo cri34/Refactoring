@@ -19,14 +19,16 @@ public class Invoice {
 	
 	public float calculateTotal (float vat, float discount) {
 		float subtotal = 0;
+		float discountCalculate=discount;
 		if (customer.isVip()) {
 			subtotal = (price * qty) - discount;
-			subtotal = subtotal * (1 + (vat/100));
-			return subtotal;
 		} else {
 			subtotal = (price * qty);
-			subtotal = subtotal * (1 + (vat/100));
-			return subtotal;
 		}
+		discountCalculate=(customer.isVip())?discount:0;
+
+		subtotal = (price * qty) - discountCalculate;
+		subtotal=subtotal * (1 + (vat/100))
+		return subtotal;
 	}
 }
