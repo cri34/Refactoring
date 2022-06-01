@@ -4,25 +4,23 @@ import java.util.Date;
 
 
 public class Customer {
+	/*-r*/
 	private String name;
 	private String dni;
-	private String creditCard;
-	private Date creditCardDate;
-	private int creditCardControlNumber;
+	private CreditCard creditCard;
 	
-	public Customer(String name, String dni) {
+	public Customer(String name, String dni, CreditCard creditCard) {
+		this.creditCard = creditCard;
 		this.name = name;
 		this.dni = dni;
 	}
 
-	public boolean isCardExpired () {
-		return creditCardDate.before(new Date());
+	public CreditCard getCreditCard() {
+		return creditCard;
 	}
+	public void setCreditCard(CreditCard creditCard){
+		this.creditCard=creditCard;
 
-	public boolean isValid () {
-		boolean result = false;
-		// Some code here...
-		return result;
 	}
 
 	public String getName() {
@@ -40,29 +38,4 @@ public class Customer {
 	public void setDni(String dni) {
 		this.dni = dni;
 	}
-
-	public String getCreditCard() {
-		return creditCard;
-	}
-
-	public void setCreditCard(String creditCard) {
-		this.creditCard = creditCard;
-	}
-
-	public Date getCreditCardDate() {
-		return creditCardDate;
-	}
-
-	public void setCreditCardDate(Date creditCardDate) {
-		this.creditCardDate = creditCardDate;
-	}
-
-	public int getCreditCardControlNumber() {
-		return creditCardControlNumber;
-	}
-
-	public void setCreditCardControlNumber(int creditCardControlNumber) {
-		this.creditCardControlNumber = creditCardControlNumber;
-	}
-
 }
