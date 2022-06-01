@@ -2,22 +2,10 @@ package refactoritzacions;
 
 public class Order {
 	public float applyVAT (int vatType) {
-		float result = 0;
-
-		switch (vatType) {
-			case 1:
-				result = 1.04f;
-				break;
-			case 2:
-				result = 1.18f;
-				break;
-			case 3:
-				result = 1.21f;
-				break;
-			default:
-				result = -1;
-				break;
-	}
-	return result;
+		float [] vats{1.04f,1.18f,1.21f};
+		if (vatType >=0 vatType < vats.length){
+			return vats[vatType];
+		}
+		return  -1;
 	}
 }
