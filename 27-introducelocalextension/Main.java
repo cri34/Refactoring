@@ -2,9 +2,9 @@ package refactoritzacions;
 
 
 public class Main {
-	private Conversor conversor = new Conversor();
+	private ConversorEur_Pound conversor = new ConversorEur_Pound();
 	
 	public double convert (double amount) {
-		return conversor.euro2Dollar(amount);
+		return ConversorEur_Pound.euro2Pound(amount);
 	}
 }
