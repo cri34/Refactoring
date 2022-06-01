@@ -10,6 +10,10 @@ public class Player {
 	public Die getDie() {
 		return die;
 	}
+
+	public int roll(){
+		return die.roll();
+	}
 	
 	
 }

@@ -3,7 +3,6 @@ package refactoritzacions;
 
 public class Main {
 	private Player player;
-	private Die die;
 	
 	public Main () {
 		init();
@@ -11,10 +10,9 @@ public class Main {
 	
 	private void init () {
 		player = new Player();
-		die = player.getDie();
 	}
-	
+
 	public int roll () {
-		return die.roll();
+		return Player.roll();
 	}
 }
