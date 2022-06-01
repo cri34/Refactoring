@@ -12,25 +12,19 @@ public class Invoice {
 
 	public float charge() {
 		if (customer.getAge() < 18) {
-			return chargeWithUnderageDiscount();
+			return realCharge(0.5f);
 		} else if (customer.payInCash()) {
-			return chargeWithCashDiscount();
+			return realCharge( 0.8f);
 		} else {
-			return chargeNormal();
+			return realCharge();
 		}
 	}
-
-	private float chargeWithUnderageDiscount() {
-		float total = subtotal * 0.5f;
+	private float realCharge(float discount) {
+		float total = subtotal * discount;
 		return total;
 	}
 
-	private float chargeWithCashDiscount() {
-		float total = subtotal * 0.8f;
-		return total;
-	}
-
-	private float chargeNormal() {
+	private float realCharge() {
 		return subtotal;
 	}
 }
