@@ -5,24 +5,16 @@ public class Vehicle {
 
 	private int acceleration;
 	private int speed;
-	
 	public Vehicle(int acceleration, int speed) {
 		this.acceleration = acceleration;
 		this.speed = speed;
 	}
-
-	public void initVehicle (int type, int value) {
-		  if (type == 1) {
-		    acceleration = value;
-		    return;
-		  }
-
-		  if (type == 2 || type == 3)  {
-		    speed = value;
-		    return;
-		  }
-		}
-
+	public void setAcceleration(int acceleration){
+		this.acceleration = acceleration;
+	}
+	public void setSpeed(int speed){
+		this.speed = speed;
+	}
 	public int getAcceleration() {
 		return acceleration;
 	}
