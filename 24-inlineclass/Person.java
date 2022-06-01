@@ -6,12 +6,12 @@ import java.util.Date;
 public class Person {
 	private String name;
 	private Date birth;
-	private Sex sex;
+	private int sex;
 	
-	public Person(String name, Date birth, int sexCode) {
+	public Person(String name, Date birth, int sex) {
 		this.name = name;
 		this.birth = birth;
-		this.sex = new Sex(sexCode);
+		this.sex = sex;
 	}
 
 	public String getName() {
@@ -30,15 +30,14 @@ public class Person {
 		this.birth = birth;
 	}
 
-	public Sex getSex() {
+	public int getSex() {
 		return sex;
 	}
 
-	public void setSex(Sex sex) {
+	public void setSex(int sex) {
 		this.sex = sex;
 	}
 
-	@Override
 	public String toString() {
 		return "Person [name=" + name + ", sex=" + sex + "]";
 	}
